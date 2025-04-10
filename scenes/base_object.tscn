@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjer2r654pn8"]
+
+[ext_resource type="Script" uid="uid://c5tbh4ng4pft2" path="res://scripts/base_object.gd" id="1_rc0p2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcxte"]
+radius = 64.0
+
+[node name="baseObject" type="Area2D"]
+script = ExtResource("1_rc0p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gcxte")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

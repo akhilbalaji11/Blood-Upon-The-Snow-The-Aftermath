@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1moujhw0pdof"]
+
+[ext_resource type="Texture2D" uid="uid://clhrxcr4j30v7" path="res://assets/AxeWarriors/Blond/Idle/Idle1.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dogfoceaeidhp" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 27.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -7)
+scale = Vector2(0.743351, 0.774038)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_g2els")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://23l548413yn2"]
+
+[ext_resource type="PackedScene" uid="uid://u2bcy4a164hu" path="res://scenes/tree.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://d1moujhw0pdof" path="res://scenes/player.tscn" id="2_rwgxs"]
+
+[node name="world" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(528, 376)
+scale = Vector2(1.65918, 1.60202)
+
+[node name="tree" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(816, 544)
+msg = "Hi tree 1"
+
+[node name="tree2" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(808, 248)
+msg = "Hi tree 2"
+
+[node name="tree3" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(208, 552)
+msg = "Hi tree 3"
+
+[node name="tree4" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(176, 232)
+msg = "Hi tree 4"
