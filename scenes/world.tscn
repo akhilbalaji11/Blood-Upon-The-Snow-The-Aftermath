@@ -799,10 +799,10 @@ position = Vector2(0, -30.5)
 shape = SubResource("RectangleShape2D_w7kh3")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1824.0
-offset_top = 576.0
-offset_right = 2051.0
-offset_bottom = 621.0
+offset_left = 1632.0
+offset_top = 656.0
+offset_right = 1859.0
+offset_bottom = 701.0
 theme_override_fonts/font = ExtResource("10_w7kh3")
 text = "Press Space to 
 advance dialogue"
