@@ -5109,4 +5109,6 @@ theme_override_fonts/font = ExtResource("5_a5u4u")
 theme_override_font_sizes/font_size = 35
 text = "WASD to move
 Point to aim
-Left-Click to shoot"
+Left-Click to shoot
+50 kills needed 
+to advance"

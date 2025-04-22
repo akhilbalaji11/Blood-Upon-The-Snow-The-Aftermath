@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Point&ClickRPG"
-run/main_scene="uid://b61ws3j8wkjhm"
+run/main_scene="uid://lyf580n5helb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://23l548413yn2"]
+[gd_scene load_steps=13 format=3 uid="uid://23l548413yn2"]
 
 [ext_resource type="Texture2D" uid="uid://bo7bdgu70ccvu" path="res://assets/Blocky_VikingVillage_Tileset.png" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://dut704gn6afvx" path="res://scripts/world.gd" id="1_qfnet"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://soxp4xqmhbwp" path="res://assets/AxeWarriors/Blond/Portrait.png" id="7_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://djkl75cbcxty" path="res://assets/Viking/Viking/Viking Portrait.png" id="8_7r4gi"]
 [ext_resource type="Script" uid="uid://brc4qwf88tpvd" path="res://scripts/HutEntranceInteractable.gd" id="9_7r4gi"]
+[ext_resource type="FontFile" uid="uid://cx58al6qqjsb8" path="res://Viking.ttf" id="10_w7kh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mrxx"]
 size = Vector2(432.063, 432)
@@ -796,3 +797,12 @@ position = Vector2(0, -4)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HutEntranceInteractable/InteractionArea"]
 position = Vector2(0, -30.5)
 shape = SubResource("RectangleShape2D_w7kh3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1824.0
+offset_top = 576.0
+offset_right = 2051.0
+offset_bottom = 621.0
+theme_override_fonts/font = ExtResource("10_w7kh3")
+text = "Press Space to 
+advance dialogue"
