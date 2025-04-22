@@ -129,10 +129,6 @@ func _go_to_scene(scene_path_string: String):
 			print("WinScreen Error: Failed to load scene from path: %s" % scene_path_string)
 	else:
 		print("WinScreen Error: Final destination scene path string not set in Inspector!")
-		
-func _on_quit_pressed() -> void:
-		get_tree().quit()
-
 
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")

@@ -13,3 +13,5 @@ res://scenes/GameOver.tscn
 res://scenes/lose.tscn
 res://scenes/world.tscn
 res://scenes/ArcheryMinigame.tscn
+res://scripts/menu.gd
+res://scripts/WinScreen.gd

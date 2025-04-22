@@ -29,7 +29,6 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Quit")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -49,20 +48,6 @@ theme_override_colors/font_pressed_color = Color(0.364706, 0.564706, 1, 1)
 theme_override_fonts/font = ExtResource("2_jc7b1")
 theme_override_font_sizes/font_size = 60
 text = "Options"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Play")
-theme_type_variation = &"FlatButton"
-theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0.188235, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.364706, 0.564706, 1, 1)
-theme_override_fonts/font = ExtResource("2_jc7b1")
-theme_override_font_sizes/font_size = 40
-text = "Quit
-"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 2
@@ -91,4 +76,3 @@ text = "The Aftermath"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
