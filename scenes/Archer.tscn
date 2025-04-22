@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctp174gwu5p4s"]
+
+[ext_resource type="Script" uid="uid://du4p1ldwfi7g6" path="res://scripts/Archer.gd" id="1_ys6re"]
+[ext_resource type="Texture2D" uid="uid://hdl0y3vmop4p" path="res://assets/archer-removebg-preview.png" id="2_ys6re"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ys6re"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cgghf"]
+radius = 16.0
+height = 32.0
+
+[node name="Archer" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_ys6re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ys6re")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, 1.49012e-08)
+rotation = -1.57059
+scale = Vector2(0.103193, 0.067298)
+texture = ExtResource("2_ys6re")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_cgghf")
+debug_color = Color(0.913827, 0.153107, 0.614801, 0.42)
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]

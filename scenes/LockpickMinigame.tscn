@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://dle312ohsxkm8"]
+
+[ext_resource type="Script" uid="uid://daudot3rwufun" path="res://scripts/LockpickMinigame.gd" id="1_jfqo1"]
+[ext_resource type="Texture2D" uid="uid://dkvm3bxyo44mj" path="res://assets/Lock.png" id="1_kg8pf"]
+[ext_resource type="Texture2D" uid="uid://dvr7aomspp7wl" path="res://assets/MovingLock.png" id="2_j0ino"]
+[ext_resource type="Texture2D" uid="uid://dak2k1k7l7dqv" path="res://assets/Screenshot 2025-04-21 162155.png" id="2_sjupi"]
+[ext_resource type="Texture2D" uid="uid://bgsg3hjpm4vuy" path="res://assets/TopPiece.png" id="3_jfqo1"]
+[ext_resource type="Texture2D" uid="uid://e1xdfqlj25ij" path="res://assets/skyrim_lockpick-removebg-preview.png" id="4_j0ino"]
+[ext_resource type="AudioStream" uid="uid://c0giltt5bg4o8" path="res://assets/sounds/jigglesound.wav" id="6_pvoak"]
+[ext_resource type="AudioStream" uid="uid://bsldvac1e2o4s" path="res://assets/sounds/breaksound.wav" id="7_vka2l"]
+[ext_resource type="AudioStream" uid="uid://3pbqq5flsqig" path="res://assets/sounds/successsound.wav" id="8_n2kne"]
+[ext_resource type="AudioStream" uid="uid://bdvyj4m2t8ouv" path="res://assets/sounds/sweetspot.wav" id="9_vka2l"]
+[ext_resource type="FontFile" uid="uid://bldy8svbs44hr" path="res://jorvik.TTF" id="11_copwu"]
+
+[node name="LockpickMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfqo1")
+
+[node name="JailBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 539.5)
+scale = Vector2(0.788825, 0.788743)
+texture = ExtResource("2_sjupi")
+
+[node name="LockBase" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -332.0
+offset_right = 384.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kg8pf")
+
+[node name="MovingLock" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 386.0
+offset_right = 1179.0
+offset_bottom = 659.0
+scale = Vector2(1.04469, 1.04462)
+pivot_offset = Vector2(141.996, 131.054)
+texture = ExtResource("2_j0ino")
+
+[node name="Lockpick" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.539
+anchor_top = 0.44
+anchor_right = 0.539
+anchor_bottom = 0.44
+offset_left = -398.88
+offset_top = -785.2
+offset_right = 353.12
+offset_bottom = -33.2
+scale = Vector2(0.409586, 0.355526)
+pivot_offset = Vector2(397.042, 825.379)
+texture = ExtResource("3_jfqo1")
+
+[node name="LockCylinder" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.538
+anchor_top = 0.483
+anchor_right = 0.538
+anchor_bottom = 0.483
+offset_left = -207.96
+offset_top = -135.64
+offset_right = 177.04
+offset_bottom = 152.36
+rotation = 0.00542475
+scale = Vector2(3.07254, 2.92651)
+pivot_offset = Vector2(208.067, 129.673)
+texture = ExtResource("4_j0ino")
+
+[node name="PickBreakTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="JiggleSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pvoak")
+
+[node name="BreakSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vka2l")
+volume_db = 3.41
+
+[node name="SuccessSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_n2kne")
+
+[node name="SweetSpotSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vka2l")
+volume_db = 2.557
+
+[node name="LevelIndicatorLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1347.0
+offset_top = 359.0
+offset_right = 1892.0
+offset_bottom = 630.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_copwu")
+theme_override_font_sizes/font_size = 35
+text = "Level ?
+Use mouse to move lockpick
+Listen for the sweet spot
+Hold Space to pry lock cylinder"

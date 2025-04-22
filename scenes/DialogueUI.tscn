@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://52g4spg7tpww"]
+
+[ext_resource type="Script" uid="uid://c61c21ghbtps4" path="res://scripts/DialogueUI.gd" id="1_dwk8m"]
+[ext_resource type="FontFile" uid="uid://bldy8svbs44hr" path="res://jorvik.TTF" id="2_7d2kc"]
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwk8m")
+
+[node name="DialogueCanvas" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="NinePatchRect" parent="DialogueCanvas"]
+unique_name_in_owner = true
+offset_left = 592.0
+offset_top = 912.0
+offset_right = 1392.0
+offset_bottom = 1012.0
+
+[node name="DialogueLabel" type="Label" parent="DialogueCanvas/DialogueBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 816.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_7d2kc")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PortraitRect" type="TextureRect" parent="DialogueCanvas/DialogueBox"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -80.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 104.0
+
+[node name="InteractionPromptLabel" type="Label" parent="DialogueCanvas"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 131.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7d2kc")
+theme_override_font_sizes/font_size = 35
+text = "Press E to interact"
+
+[node name="TypewriterTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true

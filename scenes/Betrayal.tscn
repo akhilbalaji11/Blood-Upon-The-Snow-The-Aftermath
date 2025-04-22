@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://r0m8625rl1n4"]
+
+[ext_resource type="Script" uid="uid://bheebo0rv4cxl" path="res://scripts/betrayal.gd" id="1_xbljd"]
+[ext_resource type="Texture2D" uid="uid://br68ns5ylmf4v" path="res://assets/blackscreen.jpg" id="2_psrl7"]
+[ext_resource type="Texture2D" uid="uid://duyg15f0a1dsb" path="res://assets/hallinterior.png" id="3_iusqi"]
+[ext_resource type="PackedScene" uid="uid://d1moujhw0pdof" path="res://scenes/player.tscn" id="4_jfo8m"]
+[ext_resource type="PackedScene" uid="uid://cxvnwwtj0bvl5" path="res://scenes/commander.tscn" id="5_0x26b"]
+[ext_resource type="Script" uid="uid://vpjjoidopxhw" path="res://scripts/BetrayalCommander.gd" id="5_psrl7"]
+[ext_resource type="PackedScene" uid="uid://52g4spg7tpww" path="res://scenes/DialogueUI.tscn" id="6_2pih2"]
+[ext_resource type="Texture2D" uid="uid://soxp4xqmhbwp" path="res://assets/AxeWarriors/Blond/Portrait.png" id="7_gerqy"]
+[ext_resource type="Texture2D" uid="uid://cj7vxjl2uuc74" path="res://assets/AxeWarriors/Orange/Portrait.png" id="8_87kid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeex6"]
+size = Vector2(1918, 588)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgyu"]
+size = Vector2(1917, 279)
+
+[node name="Betrayal" type="Node2D"]
+script = ExtResource("1_xbljd")
+duel_scene_path_string = "res://scenes/duelMain.tscn"
+
+[node name="Blackscreen" type="Sprite2D" parent="."]
+position = Vector2(964.5, 565.5)
+scale = Vector2(4.01458, 3.13611)
+texture = ExtResource("2_psrl7")
+
+[node name="Hallinterior" type="Sprite2D" parent="."]
+position = Vector2(960, 552)
+scale = Vector2(1.6, 1.59524)
+texture = ExtResource("3_iusqi")
+
+[node name="Player" parent="." instance=ExtResource("4_jfo8m")]
+position = Vector2(1855, 723)
+scale = Vector2(1.85727, 1.908)
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+flip_h = true
+
+[node name="Commander" parent="." instance=ExtResource("5_0x26b")]
+position = Vector2(181, 705)
+scale = Vector2(-1.12249, 1.1927)
+script = ExtResource("5_psrl7")
+betrayal_dialogue_data = Array[Dictionary]([{
+"line": "(Muttering)...That old fool Jarl... always underestimating me. This alliance with the Husavik curs... messy, but necessary.)",
+"speaker": "Commander"
+}, {
+"line": "(Muttering)... Once Thorgestr is dealt with... Reykjanesta will finally have a leader worthy of its strength... Me.)",
+"speaker": "Commander"
+}, {
+"line": "Commander Bjorn! What is the meaning of this treason?!",
+"speaker": "Player"
+}, {
+"line": "Thorgestr! You... you weren't meant to hear that. Seems Balgruuf's escape complicated things.",
+"speaker": "Commander"
+}, {
+"line": "No matter. Your father's weakness held this clan back for too long! I did what was needed!",
+"speaker": "Commander"
+}, {
+"line": "You betrayed us all! For power? You spit on the graves of the men who died following YOU!",
+"speaker": "Player"
+}, {
+"line": "Silence, boy! You understand nothing of true leadership! Prepare to join your weakling father!",
+"speaker": "Commander"
+}, {
+"line": "I'll send you to Helheim myself! FOR REYKJANESTA!",
+"speaker": "Player"
+}])
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(960, 294)
+shape = SubResource("RectangleShape2D_jeex6")
+
+[node name="Area2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(959.5, 990.5)
+shape = SubResource("RectangleShape2D_3bgyu")
+
+[node name="DialogueUI" parent="." instance=ExtResource("6_2pih2")]
+player_portrait = ExtResource("7_gerqy")
+commander_portrait = ExtResource("8_87kid")
+
+[editable path="Player"]

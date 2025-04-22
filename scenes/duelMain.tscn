@@ -1,0 +1,414 @@
+[gd_scene load_steps=76 format=3 uid="uid://cncaoencgpqyq"]
+
+[ext_resource type="Texture2D" uid="uid://cfrdnnny84d3f" path="res://assets/AxeWarriors/Blond/Attack/Attack1.png" id="1_6gu1p"]
+[ext_resource type="Script" uid="uid://bim6g3plwmqcm" path="res://scripts/duelMain.gd" id="1_duy8b"]
+[ext_resource type="Texture2D" uid="uid://br68ns5ylmf4v" path="res://assets/blackscreen.jpg" id="2_5wpb1"]
+[ext_resource type="Texture2D" uid="uid://njdnmdwppwod" path="res://assets/AxeWarriors/Blond/Attack/Attack2.png" id="2_6sa0n"]
+[ext_resource type="Texture2D" uid="uid://duyg15f0a1dsb" path="res://assets/hallinterior.png" id="2_y26yc"]
+[ext_resource type="Texture2D" uid="uid://cungcpg4424rj" path="res://assets/AxeWarriors/Blond/Attack/Attack3.png" id="3_oec6m"]
+[ext_resource type="Texture2D" uid="uid://de7b4iabuf55b" path="res://assets/HitMarker.png" id="3_t48f0"]
+[ext_resource type="Texture2D" uid="uid://dg2h8447ua6bg" path="res://assets/AxeWarriors/Blond/Attack/Attack4.png" id="4_lc0t5"]
+[ext_resource type="Texture2D" uid="uid://dvrjel1fxuob8" path="res://assets/AxeWarriors/Blond/Attack/Attack5.png" id="5_jfb3b"]
+[ext_resource type="Texture2D" uid="uid://cvn4eb3lm75ko" path="res://assets/AxeWarriors/Blond/Attack/Attack6.png" id="6_hhjpe"]
+[ext_resource type="Texture2D" uid="uid://blso7fy0k864i" path="res://assets/AxeWarriors/Blond/Attack/Attack7.png" id="7_nwd2f"]
+[ext_resource type="Texture2D" uid="uid://d2o8hcteb5bs1" path="res://assets/AxeWarriors/Blond/Attack/Attack8.png" id="8_pnqrh"]
+[ext_resource type="Texture2D" uid="uid://bjw4xkersaqbm" path="res://assets/AxeWarriors/Blond/Attack/Attack9.png" id="9_k3xhj"]
+[ext_resource type="Texture2D" uid="uid://cucbkbao14wi4" path="res://assets/AxeWarriors/Blond/Attack/Attack10.png" id="10_o7lag"]
+[ext_resource type="Texture2D" uid="uid://bgkfaexwg64bc" path="res://assets/AxeWarriors/Blond/Attack/Attack11.png" id="11_13ice"]
+[ext_resource type="Texture2D" uid="uid://40lu7oot1lkk" path="res://assets/AxeWarriors/Blond/Attack/Attack12.png" id="12_t4tvm"]
+[ext_resource type="Texture2D" uid="uid://csgknugg165k8" path="res://assets/AxeWarriors/Blond/Attack/Attack13.png" id="13_wgndy"]
+[ext_resource type="Texture2D" uid="uid://clhrxcr4j30v7" path="res://assets/AxeWarriors/Blond/Idle/Idle1.png" id="14_fxpeg"]
+[ext_resource type="Texture2D" uid="uid://ta87m774ci3q" path="res://assets/AxeWarriors/Blond/Death/Death1.png" id="14_jejx8"]
+[ext_resource type="Texture2D" uid="uid://daayytq3fpeti" path="res://assets/AxeWarriors/Blond/Idle/Idle2.png" id="15_0qbsj"]
+[ext_resource type="Texture2D" uid="uid://dhok5vs0vd2n1" path="res://assets/AxeWarriors/Blond/Death/Death2.png" id="15_duy8b"]
+[ext_resource type="Texture2D" uid="uid://de5yijkj27w0m" path="res://assets/AxeWarriors/Blond/Idle/Idle3.png" id="16_afo7x"]
+[ext_resource type="Texture2D" uid="uid://covir0qyudit0" path="res://assets/AxeWarriors/Blond/Death/Death3.png" id="16_y26yc"]
+[ext_resource type="Texture2D" uid="uid://xo3b7iw076b1" path="res://assets/AxeWarriors/Blond/Death/Death4.png" id="17_t48f0"]
+[ext_resource type="Texture2D" uid="uid://bty3ckjfuw8e2" path="res://assets/AxeWarriors/Blond/Idle/Idle4.png" id="17_w0aiu"]
+[ext_resource type="Texture2D" uid="uid://bla1i3qu7vm5n" path="res://assets/AxeWarriors/Blond/Idle/Idle5.png" id="18_kgf2x"]
+[ext_resource type="Texture2D" uid="uid://7nm8lw1mpsdh" path="res://assets/AxeWarriors/Blond/Death/Death5.png" id="18_p1ki8"]
+[ext_resource type="Texture2D" uid="uid://cujbhjwlr6sro" path="res://assets/AxeWarriors/Blond/Idle/Idle6.png" id="19_1qv2m"]
+[ext_resource type="Texture2D" uid="uid://breypex6kosnp" path="res://assets/AxeWarriors/Blond/Death/Death6.png" id="19_5wpb1"]
+[ext_resource type="Texture2D" uid="uid://bkvum4qpgyser" path="res://assets/AxeWarriors/Blond/Death/Death7.png" id="20_vswkn"]
+[ext_resource type="Texture2D" uid="uid://dm0lrkbnswyvl" path="res://assets/AxeWarriors/Blond/Death/Death8.png" id="21_spyed"]
+[ext_resource type="Texture2D" uid="uid://bvv6fa2xd1c00" path="res://assets/AxeWarriors/Blond/Death/Death9.png" id="22_rw0lq"]
+[ext_resource type="Texture2D" uid="uid://o3hrg628bb0" path="res://assets/AxeWarriors/Blond/Death/Death10.png" id="23_400ly"]
+[ext_resource type="Texture2D" uid="uid://bqgyobblbgrsq" path="res://assets/AxeWarriors/Blond/Death/Death11.png" id="24_oxlhd"]
+[ext_resource type="Texture2D" uid="uid://dib5j7tku4cyh" path="res://assets/AxeWarriors/Blond/Death/Death12.png" id="25_5mivp"]
+[ext_resource type="Texture2D" uid="uid://cdtsm02r5t05h" path="res://assets/AxeWarriors/Blond/Hurt/Hurt1.png" id="26_gh3u4"]
+[ext_resource type="Texture2D" uid="uid://ndm4cmqw5wq2" path="res://assets/AxeWarriors/Blond/Hurt/Hurt2.png" id="27_hsb6b"]
+[ext_resource type="Texture2D" uid="uid://sfooknhper28" path="res://assets/AxeWarriors/Blond/Hurt/Hurt3.png" id="28_47bsi"]
+[ext_resource type="Texture2D" uid="uid://jqya7iiduil3" path="res://assets/AxeWarriors/Orange/Attack/Attack1.png" id="35_he6am"]
+[ext_resource type="Texture2D" uid="uid://yvvsrha4enmi" path="res://assets/AxeWarriors/Orange/Attack/Attack2.png" id="36_qstp8"]
+[ext_resource type="Texture2D" uid="uid://def7rv6msryjd" path="res://assets/AxeWarriors/Orange/Attack/Attack3.png" id="37_p1h3k"]
+[ext_resource type="Texture2D" uid="uid://dq1t63xv2du2h" path="res://assets/AxeWarriors/Orange/Attack/Attack4.png" id="38_fgylo"]
+[ext_resource type="Texture2D" uid="uid://d4ces7r606pi3" path="res://assets/AxeWarriors/Orange/Attack/Attack5.png" id="39_6pd4d"]
+[ext_resource type="Texture2D" uid="uid://cf4xo4g7n138j" path="res://assets/AxeWarriors/Orange/Attack/Attack6.png" id="40_xrqot"]
+[ext_resource type="Texture2D" uid="uid://bjq2gb1476h4m" path="res://assets/AxeWarriors/Orange/Attack/Attack7.png" id="41_lv1jb"]
+[ext_resource type="Texture2D" uid="uid://8b85v6rymv76" path="res://assets/AxeWarriors/Orange/Attack/Attack8.png" id="42_y50sj"]
+[ext_resource type="Texture2D" uid="uid://cujew88o6gcto" path="res://assets/AxeWarriors/Orange/Attack/Attack9.png" id="43_qmxcl"]
+[ext_resource type="Texture2D" uid="uid://dnuecwico3m1w" path="res://assets/AxeWarriors/Orange/Attack/Attack10.png" id="44_hoc0r"]
+[ext_resource type="Texture2D" uid="uid://dk7fib2w4a4jr" path="res://assets/AxeWarriors/Orange/Attack/Attack11.png" id="45_fi5fy"]
+[ext_resource type="Texture2D" uid="uid://kcbhx55e5qav" path="res://assets/AxeWarriors/Orange/Attack/Attack12.png" id="46_v6w7b"]
+[ext_resource type="Texture2D" uid="uid://bufjtv4bep1nj" path="res://assets/AxeWarriors/Orange/Attack/Attack13.png" id="47_rimlq"]
+[ext_resource type="Texture2D" uid="uid://bsje16an4vdoa" path="res://assets/AxeWarriors/Orange/Death/Death1.png" id="48_h8p5f"]
+[ext_resource type="Texture2D" uid="uid://ci05q7t0jes6u" path="res://assets/AxeWarriors/Orange/Death/Death2.png" id="49_t0qyt"]
+[ext_resource type="Texture2D" uid="uid://poaihdinb7ag" path="res://assets/AxeWarriors/Orange/Death/Death3.png" id="50_ebkji"]
+[ext_resource type="Texture2D" uid="uid://dfigr6ejfhgcx" path="res://assets/AxeWarriors/Orange/Death/Death4.png" id="51_haphm"]
+[ext_resource type="Texture2D" uid="uid://csgigdgioqe6j" path="res://assets/AxeWarriors/Orange/Death/Death5.png" id="52_fchoo"]
+[ext_resource type="Texture2D" uid="uid://cia2lgarjsh13" path="res://assets/AxeWarriors/Orange/Death/Death6.png" id="53_xr2qr"]
+[ext_resource type="Texture2D" uid="uid://0un4bgi0odf" path="res://assets/AxeWarriors/Orange/Death/Death7.png" id="54_bdggy"]
+[ext_resource type="Texture2D" uid="uid://doy5606jmm2xx" path="res://assets/AxeWarriors/Orange/Death/Death8.png" id="55_42kww"]
+[ext_resource type="Texture2D" uid="uid://c7ggcnl6onuhi" path="res://assets/AxeWarriors/Orange/Death/Death9.png" id="56_6v28g"]
+[ext_resource type="Texture2D" uid="uid://cqar1lo1ws754" path="res://assets/AxeWarriors/Orange/Death/Death10.png" id="57_bimuj"]
+[ext_resource type="Texture2D" uid="uid://b7dyufgfg1fu4" path="res://assets/AxeWarriors/Orange/Death/Death11.png" id="58_8y3t4"]
+[ext_resource type="Texture2D" uid="uid://b61bk208qqqos" path="res://assets/AxeWarriors/Orange/Death/Death12.png" id="59_7rkwj"]
+[ext_resource type="Texture2D" uid="uid://bqsqjtt46xnh" path="res://assets/AxeWarriors/Orange/Hurt/Hurt1.png" id="60_3i7hq"]
+[ext_resource type="Texture2D" uid="uid://863cqkraej58" path="res://assets/AxeWarriors/Orange/Hurt/Hurt2.png" id="61_0y12a"]
+[ext_resource type="Texture2D" uid="uid://debd5y3lqj44v" path="res://assets/AxeWarriors/Orange/Hurt/Hurt3.png" id="62_e7a55"]
+[ext_resource type="Texture2D" uid="uid://dxsav61j83yqp" path="res://assets/AxeWarriors/Orange/Idle/Idle1.png" id="63_pmiqv"]
+[ext_resource type="Texture2D" uid="uid://cf48jsaq8bhe4" path="res://assets/AxeWarriors/Orange/Idle/Idle2.png" id="64_sik4a"]
+[ext_resource type="Texture2D" uid="uid://2d1pfev4xibm" path="res://assets/AxeWarriors/Orange/Idle/Idle3.png" id="65_hbxv4"]
+[ext_resource type="Texture2D" uid="uid://b6egxr45hqfh7" path="res://assets/AxeWarriors/Orange/Idle/Idle4.png" id="66_ydjmb"]
+[ext_resource type="Texture2D" uid="uid://e7uaktaegtw1" path="res://assets/AxeWarriors/Orange/Idle/Idle5.png" id="67_4icaf"]
+[ext_resource type="Texture2D" uid="uid://d1pq2avciue0i" path="res://assets/AxeWarriors/Orange/Idle/Idle6.png" id="68_uiifi"]
+[ext_resource type="FontFile" uid="uid://bldy8svbs44hr" path="res://jorvik.TTF" id="72_p1ki8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtco8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6gu1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6sa0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oec6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lc0t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jfb3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hhjpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nwd2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pnqrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k3xhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o7lag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_13ice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t4tvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wgndy")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_jejx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_duy8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y26yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t48f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t48f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_p1ki8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5wpb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vswkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_spyed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rw0lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_400ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_oxlhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5mivp")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_gh3u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hsb6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_47bsi")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_fxpeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0qbsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_afo7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w0aiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kgf2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1qv2m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tbrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_he6am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_qstp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_p1h3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fgylo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6pd4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_xrqot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_lv1jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_y50sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_qmxcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_hoc0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fi5fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_v6w7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rimlq")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_h8p5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_t0qyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ebkji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_haphm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_fchoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xr2qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bdggy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_42kww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6v28g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_bimuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_8y3t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_7rkwj")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_3i7hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_0y12a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_e7a55")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_pmiqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_sik4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_hbxv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ydjmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_4icaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_uiifi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="duelMain" type="Node2D"]
+script = ExtResource("1_duy8b")
+
+[node name="Blackscreen" type="Sprite2D" parent="."]
+position = Vector2(983.667, 573.333)
+scale = Vector2(4.09722, 3.18704)
+texture = ExtResource("2_5wpb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.5, 462.75)
+scale = Vector2(1.60083, 1.62054)
+texture = ExtResource("2_y26yc")
+
+[node name="duelUILayer" type="CanvasLayer" parent="."]
+
+[node name="duelClickBtn" type="TextureButton" parent="duelUILayer"]
+offset_left = 64.0
+offset_top = 288.0
+offset_right = 484.0
+offset_bottom = 708.0
+scale = Vector2(0.287462, 0.290023)
+disabled = true
+texture_normal = ExtResource("3_t48f0")
+
+[node name="duelPlayer" type="AnimatedSprite2D" parent="."]
+position = Vector2(1054, 562)
+scale = Vector2(-3.09465, 3.45967)
+sprite_frames = SubResource("SpriteFrames_mtco8")
+animation = &"idle"
+
+[node name="duelEnemy" type="AnimatedSprite2D" parent="."]
+position = Vector2(910, 559)
+scale = Vector2(3.14981, 3.48062)
+sprite_frames = SubResource("SpriteFrames_1tbrc")
+animation = &"idle"
+
+[node name="duelSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="duelWindowTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="duelAttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="duelHUD" type="CanvasLayer" parent="."]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Instructions" type="Label" parent="duelHUD"]
+offset_left = 298.667
+offset_top = 44.6667
+offset_right = 366.667
+offset_bottom = 67.6667
+theme_override_fonts/font = ExtResource("72_p1ki8")
+theme_override_font_sizes/font_size = 21
+text = "DUEL : 1"
+
+[node name="Label" type="Label" parent="duelHUD"]
+offset_left = 60.3333
+offset_top = 4.33333
+offset_right = 606.333
+offset_bottom = 55.3333
+theme_override_fonts/font = ExtResource("72_p1ki8")
+theme_override_font_sizes/font_size = 21
+text = "Hit the red hit markers to deal damage, miss them and you get hit"
+
+[node name="duelPlayerHP" type="Label" parent="duelHUD"]
+offset_left = 389.333
+offset_top = 248.667
+offset_right = 511.333
+offset_bottom = 271.667
+theme_override_fonts/font = ExtResource("72_p1ki8")
+theme_override_font_sizes/font_size = 21
+text = "Thorgestr: 100"
+
+[node name="duelEnemyHP" type="Label" parent="duelHUD"]
+offset_left = 191.0
+offset_top = 246.667
+offset_right = 277.0
+offset_bottom = 269.667
+theme_override_fonts/font = ExtResource("72_p1ki8")
+theme_override_font_sizes/font_size = 21
+text = "Bjorn: 100"

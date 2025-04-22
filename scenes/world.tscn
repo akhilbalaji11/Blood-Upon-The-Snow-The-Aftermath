@@ -1,26 +1,798 @@
-[gd_scene load_steps=3 format=3 uid="uid://23l548413yn2"]
+[gd_scene load_steps=12 format=3 uid="uid://23l548413yn2"]
 
+[ext_resource type="Texture2D" uid="uid://bo7bdgu70ccvu" path="res://assets/Blocky_VikingVillage_Tileset.png" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://dut704gn6afvx" path="res://scripts/world.gd" id="1_qfnet"]
 [ext_resource type="PackedScene" uid="uid://u2bcy4a164hu" path="res://scenes/tree.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://d1moujhw0pdof" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dhu5juwwc7rne" path="res://scenes/father.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://52g4spg7tpww" path="res://scenes/DialogueUI.tscn" id="6_i7141"]
+[ext_resource type="Texture2D" uid="uid://soxp4xqmhbwp" path="res://assets/AxeWarriors/Blond/Portrait.png" id="7_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://djkl75cbcxty" path="res://assets/Viking/Viking/Viking Portrait.png" id="8_7r4gi"]
+[ext_resource type="Script" uid="uid://brc4qwf88tpvd" path="res://scripts/HutEntranceInteractable.gd" id="9_7r4gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mrxx"]
+size = Vector2(432.063, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kh3"]
+size = Vector2(74, 77)
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_qfnet")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_rwgxs")]
-position = Vector2(528, 376)
+[node name="BlockyVikingVillageTileset" type="Sprite2D" parent="."]
+position = Vector2(131, 95)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset2" type="Sprite2D" parent="."]
+position = Vector2(131, 285)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset7" type="Sprite2D" parent="."]
+position = Vector2(131, 474)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset6" type="Sprite2D" parent="."]
+position = Vector2(131, 662)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset5" type="Sprite2D" parent="."]
+position = Vector2(131, 852)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset4" type="Sprite2D" parent="."]
+position = Vector2(131, 1042)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset3" type="Sprite2D" parent="."]
+position = Vector2(392, 95)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset8" type="Sprite2D" parent="."]
+position = Vector2(392, 851)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset9" type="Sprite2D" parent="."]
+position = Vector2(392, 661)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset10" type="Sprite2D" parent="."]
+position = Vector2(392, 471)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset11" type="Sprite2D" parent="."]
+position = Vector2(392, 283)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset12" type="Sprite2D" parent="."]
+position = Vector2(392, 1041)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset13" type="Sprite2D" parent="."]
+position = Vector2(653.773, 95.2941)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset14" type="Sprite2D" parent="."]
+position = Vector2(653.773, 285.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset15" type="Sprite2D" parent="."]
+position = Vector2(653.773, 474.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset77" type="Sprite2D" parent="."]
+position = Vector2(232, 328)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 784, 40, 48)
+
+[node name="BlockyVikingVillageTileset80" type="Sprite2D" parent="."]
+position = Vector2(376, 328)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 784, 40, 48)
+
+[node name="BlockyVikingVillageTileset79" type="Sprite2D" parent="."]
+position = Vector2(736, 344)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 784, 40, 48)
+
+[node name="BlockyVikingVillageTileset16" type="Sprite2D" parent="."]
+position = Vector2(653.773, 662.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset17" type="Sprite2D" parent="."]
+position = Vector2(653.773, 852.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset18" type="Sprite2D" parent="."]
+position = Vector2(653.773, 1042.29)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset19" type="Sprite2D" parent="."]
+position = Vector2(915.773, 95.2941)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset20" type="Sprite2D" parent="."]
+position = Vector2(915.773, 851.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset21" type="Sprite2D" parent="."]
+position = Vector2(915.773, 661.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset22" type="Sprite2D" parent="."]
+position = Vector2(915.773, 471.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset70" type="Sprite2D" parent="."]
+position = Vector2(464, 232)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset23" type="Sprite2D" parent="."]
+position = Vector2(915.773, 283.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset24" type="Sprite2D" parent="."]
+position = Vector2(915.773, 1041.29)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset25" type="Sprite2D" parent="."]
+position = Vector2(1176.77, 94.2941)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset26" type="Sprite2D" parent="."]
+position = Vector2(1176.77, 284.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset27" type="Sprite2D" parent="."]
+position = Vector2(1176.77, 473.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset28" type="Sprite2D" parent="."]
+position = Vector2(1176.77, 661.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset78" type="Sprite2D" parent="."]
+position = Vector2(896, 344)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 784, 40, 48)
+
+[node name="BlockyVikingVillageTileset29" type="Sprite2D" parent="."]
+position = Vector2(1176.77, 851.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset30" type="Sprite2D" parent="."]
+position = Vector2(1176.77, 1041.29)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset31" type="Sprite2D" parent="."]
+position = Vector2(1432, 94)
+scale = Vector2(1.43111, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset32" type="Sprite2D" parent="."]
+position = Vector2(1437.77, 850.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset33" type="Sprite2D" parent="."]
+position = Vector2(1437.77, 660.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset34" type="Sprite2D" parent="."]
+position = Vector2(1437.77, 470.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset35" type="Sprite2D" parent="."]
+position = Vector2(1437.11, 280)
+scale = Vector2(1.37382, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset36" type="Sprite2D" parent="."]
+position = Vector2(1437.77, 1040.29)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset37" type="Sprite2D" parent="."]
+position = Vector2(1698.77, 94.2941)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset38" type="Sprite2D" parent="."]
+position = Vector2(1698.77, 284.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset39" type="Sprite2D" parent="."]
+position = Vector2(1698.77, 473.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset40" type="Sprite2D" parent="."]
+position = Vector2(1698.77, 661.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset41" type="Sprite2D" parent="."]
+position = Vector2(1698.77, 851.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset42" type="Sprite2D" parent="."]
+position = Vector2(1698.77, 1041.29)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset43" type="Sprite2D" parent="."]
+position = Vector2(1959.77, 94.2941)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset44" type="Sprite2D" parent="."]
+position = Vector2(1959.77, 850.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset51" type="Sprite2D" parent="."]
+position = Vector2(312, 184)
+scale = Vector2(2.79191, 2.49318)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(192, 832, 136, 128)
+
+[node name="BlockyVikingVillageTileset61" type="Sprite2D" parent="."]
+position = Vector2(840, 184)
+scale = Vector2(2.86654, 2.55909)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(192, 832, 136, 128)
+
+[node name="BlockyVikingVillageTileset45" type="Sprite2D" parent="."]
+position = Vector2(1959.77, 660.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset46" type="Sprite2D" parent="."]
+position = Vector2(1959.77, 470.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset47" type="Sprite2D" parent="."]
+position = Vector2(1959.77, 282.294)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset48" type="Sprite2D" parent="."]
+position = Vector2(1959.77, 1040.29)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(704, 512, 192, 192)
+
+[node name="BlockyVikingVillageTileset50" type="Sprite2D" parent="."]
+position = Vector2(1888, 88)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(656, 872, 40, 184)
+
+[node name="BlockyVikingVillageTileset56" type="Sprite2D" parent="."]
+position = Vector2(1592, 88)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(656, 872, 40, 184)
+
+[node name="BlockyVikingVillageTileset57" type="Sprite2D" parent="."]
+position = Vector2(1592, 216)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(656, 872, 40, 184)
+
+[node name="BlockyVikingVillageTileset58" type="Sprite2D" parent="."]
+position = Vector2(1592, 344)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(656, 872, 40, 184)
+
+[node name="BlockyVikingVillageTileset53" type="Sprite2D" parent="."]
+position = Vector2(1888, 216)
+scale = Vector2(1.36222, 0.992647)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(656, 872, 40, 184)
+
+[node name="BlockyVikingVillageTileset55" type="Sprite2D" parent="."]
+position = Vector2(1888, 347.792)
+scale = Vector2(1.36222, 1.08921)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(656, 872, 40, 184)
+
+[node name="BlockyVikingVillageTileset71" type="Sprite2D" parent="."]
+position = Vector2(1008, 232)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset75" type="Sprite2D" parent="."]
+position = Vector2(1008, 264)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset76" type="Sprite2D" parent="."]
+position = Vector2(1008, 304)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset72" type="Sprite2D" parent="."]
+position = Vector2(480, 272)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset73" type="Sprite2D" parent="."]
+position = Vector2(128, 272)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset82" type="Sprite2D" parent="."]
+position = Vector2(1832, 80)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset83" type="Sprite2D" parent="."]
+position = Vector2(1640, 72)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset74" type="Sprite2D" parent="."]
+position = Vector2(120, 224)
+scale = Vector2(1.01444, 1.09632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(648, 536, 48, 40)
+
+[node name="BlockyVikingVillageTileset60" type="Sprite2D" parent="."]
+position = Vector2(1704, 864)
+scale = Vector2(2.35778, 2.15741)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1088, 0, 192, 240)
+
+[node name="BlockyVikingVillageTileset63" type="Sprite2D" parent="."]
+position = Vector2(128, 800)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset64" type="Sprite2D" parent="."]
+position = Vector2(440, 800)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset65" type="Sprite2D" parent="."]
+position = Vector2(712, 808)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset66" type="Sprite2D" parent="."]
+position = Vector2(1024, 800)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset67" type="Sprite2D" parent="."]
+position = Vector2(1832, 360)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset68" type="Sprite2D" parent="."]
+position = Vector2(1672, 360)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset69" type="Sprite2D" parent="."]
+position = Vector2(1456, 1064)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="BlockyVikingVillageTileset81" type="Sprite2D" parent="."]
+position = Vector2(1456, 1016)
+scale = Vector2(1.08111, 1.29632)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1296, 720, 40, 40)
+
+[node name="Hut" type="Sprite2D" parent="."]
+position = Vector2(1736, 243.25)
+scale = Vector2(1.92188, 1.84961)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(0, 832, 192, 256)
+
+[node name="BlockyVikingVillageTileset62" type="Sprite2D" parent="."]
+position = Vector2(1744, 488)
+scale = Vector2(1.39539, 1.53479)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(1224, 880, 56, 208)
+
+[node name="Player" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(134, 470)
 scale = Vector2(1.65918, 1.60202)
 
-[node name="tree" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(816, 544)
-msg = "Hi tree 1"
+[node name="Father" parent="." instance=ExtResource("3_k0juu")]
+position = Vector2(1734, 549)
+scale = Vector2(-1.58208, 1.50755)
 
-[node name="tree2" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(808, 248)
+[node name="tree31" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1376, 32)
+msg = "Hi tree 3"
+
+[node name="tree29" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1256, 40)
+rotation = 3.14159
+scale = Vector2(1.05745, -1.07531)
+msg = "Hi tree 2"
+
+[node name="tree28" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1312, 104)
+rotation = -3.14159
+scale = Vector2(1.05745, -1.07531)
 msg = "Hi tree 2"
 
 [node name="tree3" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(208, 552)
+position = Vector2(1424, 80)
 msg = "Hi tree 3"
 
+[node name="tree20" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1232, 120)
+rotation = 3.14159
+scale = Vector2(1.05745, -1.07531)
+msg = "Hi tree 2"
+
+[node name="tree30" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1496, 48)
+msg = "Hi tree 3"
+
+[node name="tree23" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1272, 192)
+rotation = 3.14159
+scale = Vector2(1.05745, -1.07531)
+msg = "Hi tree 1"
+
+[node name="tree2" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1488, 136)
+msg = "Hi tree 2"
+
+[node name="tree7" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1370, 144)
+msg = "Hi tree 1"
+
 [node name="tree4" parent="." instance=ExtResource("2_4wyf3")]
-position = Vector2(176, 232)
+position = Vector2(1430, 205)
 msg = "Hi tree 4"
+
+[node name="tree" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1541, 217)
+msg = "Hi tree 1"
+
+[node name="tree6" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1464, 288)
+msg = "Hi tree 1"
+
+[node name="tree5" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1352, 248)
+msg = "Hi tree 1"
+
+[node name="tree19" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1144, 50)
+scale = Vector2(-1.05745, 1.07531)
+msg = "Hi tree 3"
+
+[node name="tree21" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1114, 128)
+scale = Vector2(-1.05745, 1.07531)
+msg = "Hi tree 1"
+
+[node name="tree22" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1174, 189)
+scale = Vector2(-1.05745, 1.07531)
+msg = "Hi tree 4"
+
+[node name="tree26" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1400, 848)
+msg = "Hi tree 1"
+
+[node name="tree27" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1368, 936)
+msg = "Hi tree 1"
+
+[node name="tree24" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1208, 272)
+scale = Vector2(-1.05745, 1.07531)
+msg = "Hi tree 1"
+
+[node name="tree32" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1288, 312)
+scale = Vector2(-1.05745, 1.07531)
+msg = "Hi tree 1"
+
+[node name="tree34" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1392, 336)
+scale = Vector2(-1.09932, 1.01029)
+msg = "Hi tree 1"
+
+[node name="tree25" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1096, 232)
+scale = Vector2(-1.09932, 1.01029)
+msg = "Hi tree 1"
+
+[node name="tree12" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1224, 760)
+msg = "Hi tree 3"
+
+[node name="tree13" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1288, 816)
+msg = "Hi tree 2"
+
+[node name="tree14" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1170, 824)
+msg = "Hi tree 1"
+
+[node name="tree15" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1230, 885)
+msg = "Hi tree 4"
+
+[node name="tree16" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1320, 896)
+msg = "Hi tree 1"
+
+[node name="tree17" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1264, 968)
+msg = "Hi tree 1"
+
+[node name="tree18" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1152, 928)
+msg = "Hi tree 1"
+
+[node name="tree8" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(640, 144)
+msg = "Hi tree 1"
+
+[node name="tree9" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(536, 144)
+msg = "Hi tree 1"
+
+[node name="tree33" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(1128, 328)
+rotation = 3.14159
+scale = Vector2(1.05745, -1.07531)
+msg = "Hi tree 1"
+
+[node name="tree10" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(624, 232)
+msg = "Hi tree 1"
+
+[node name="tree11" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(520, 224)
+msg = "Hi tree 1"
+
+[node name="BlockyVikingVillageTileset49" type="Sprite2D" parent="."]
+position = Vector2(296, 904)
+scale = Vector2(2.94167, 2.53125)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(200, 960, 120, 128)
+
+[node name="BlockyVikingVillageTileset52" type="Sprite2D" parent="."]
+position = Vector2(872, 888)
+scale = Vector2(2.875, 2.53125)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(200, 960, 120, 128)
+
+[node name="BlockyVikingVillageTileset54" type="Sprite2D" parent="."]
+position = Vector2(296, 872)
+scale = Vector2(3.22151, 2.12816)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(464, 864, 168, 200)
+
+[node name="BlockyVikingVillageTileset59" type="Sprite2D" parent="."]
+position = Vector2(872, 872)
+scale = Vector2(3.11075, 2.14408)
+texture = ExtResource("1_nnsk1")
+region_enabled = true
+region_rect = Rect2(464, 864, 168, 200)
+
+[node name="DialogueUI" parent="." instance=ExtResource("6_i7141")]
+player_portrait = ExtResource("7_4mrxx")
+father_portrait = ExtResource("8_7r4gi")
+
+[node name="LakeCollider" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LakeCollider"]
+position = Vector2(288.063, 984)
+shape = SubResource("RectangleShape2D_4mrxx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LakeCollider"]
+position = Vector2(855.969, 984)
+shape = SubResource("RectangleShape2D_4mrxx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LakeCollider"]
+position = Vector2(1704, 856)
+shape = SubResource("RectangleShape2D_4mrxx")
+
+[node name="HutEntranceInteractable" type="Node2D" parent="." groups=["interactable"]]
+position = Vector2(1736, 348)
+script = ExtResource("9_7r4gi")
+
+[node name="InteractionArea" type="Area2D" parent="HutEntranceInteractable"]
+position = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HutEntranceInteractable/InteractionArea"]
+position = Vector2(0, -30.5)
+shape = SubResource("RectangleShape2D_w7kh3")

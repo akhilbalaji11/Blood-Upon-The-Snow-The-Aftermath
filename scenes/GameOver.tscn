@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dncumedeue2tf"]
+
+[ext_resource type="Script" uid="uid://cecat77enbsh5" path="res://scripts/GameOver.gd" id="1_6bcno"]
+[ext_resource type="FontFile" uid="uid://cx58al6qqjsb8" path="res://Viking.ttf" id="2_qae0b"]
+[ext_resource type="Texture2D" uid="uid://bwplyxll8xpho" path="res://assets/emptyWorld.png" id="2_vuicl"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_6bcno")
+
+[node name="EmptyWorld" type="Sprite2D" parent="."]
+position = Vector2(959.75, 538.5)
+scale = Vector2(0.789355, 0.792826)
+texture = ExtResource("2_vuicl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer"]
+offset_left = 688.0
+offset_top = 320.0
+offset_right = 1278.0
+offset_bottom = 411.0
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_font_sizes/font_size = 70
+text = "Game Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="FinalScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 872.0
+offset_top = 424.0
+offset_right = 1112.0
+offset_bottom = 479.0
+theme_override_colors/font_color = Color(0.794399, 3.22476e-06, 9.62615e-07, 1)
+theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_font_sizes/font_size = 45
+text = "Kills: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 776.0
+offset_top = 480.0
+offset_right = 1214.0
+offset_bottom = 535.0
+theme_override_colors/font_color = Color(1, 0.866667, 0, 1)
+theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_font_sizes/font_size = 45
+text = "High Score: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
+offset_left = 832.0
+offset_top = 544.0
+offset_right = 1155.0
+offset_bottom = 617.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_restart_pressed"]

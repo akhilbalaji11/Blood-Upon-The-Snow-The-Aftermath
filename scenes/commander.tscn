@@ -1,0 +1,125 @@
+[gd_scene load_steps=21 format=3 uid="uid://cxvnwwtj0bvl5"]
+
+[ext_resource type="Script" uid="uid://bs228ao1xw0mm" path="res://scripts/commander.gd" id="1_0cs06"]
+[ext_resource type="Texture2D" uid="uid://dxsav61j83yqp" path="res://assets/AxeWarriors/Orange/Idle/Idle1.png" id="2_0cs06"]
+[ext_resource type="Texture2D" uid="uid://cf48jsaq8bhe4" path="res://assets/AxeWarriors/Orange/Idle/Idle2.png" id="3_d4yuh"]
+[ext_resource type="Texture2D" uid="uid://df6861f7vdron" path="res://assets/AxeWarriors/Blond/Run/Run1.png" id="3_xqjur"]
+[ext_resource type="Texture2D" uid="uid://c6i88c1v7vx48" path="res://assets/AxeWarriors/Blond/Run/Run2.png" id="4_bskwq"]
+[ext_resource type="Texture2D" uid="uid://2d1pfev4xibm" path="res://assets/AxeWarriors/Orange/Idle/Idle3.png" id="4_rnswr"]
+[ext_resource type="Texture2D" uid="uid://c71t6b1oofrvh" path="res://assets/AxeWarriors/Blond/Run/Run3.png" id="5_276gw"]
+[ext_resource type="Texture2D" uid="uid://b6egxr45hqfh7" path="res://assets/AxeWarriors/Orange/Idle/Idle4.png" id="5_frk7j"]
+[ext_resource type="Texture2D" uid="uid://cp8jn6kchyudi" path="res://assets/AxeWarriors/Blond/Run/Run4.png" id="6_0cs06"]
+[ext_resource type="Texture2D" uid="uid://e7uaktaegtw1" path="res://assets/AxeWarriors/Orange/Idle/Idle5.png" id="6_4l4bv"]
+[ext_resource type="Texture2D" uid="uid://dfa4prh88psje" path="res://assets/AxeWarriors/Blond/Run/Run5.png" id="7_d4yuh"]
+[ext_resource type="Texture2D" uid="uid://d1pq2avciue0i" path="res://assets/AxeWarriors/Orange/Idle/Idle6.png" id="7_fs7m2"]
+[ext_resource type="Texture2D" uid="uid://fmf42j3bg14t" path="res://assets/AxeWarriors/Blond/Run/Run6.png" id="8_rnswr"]
+[ext_resource type="Texture2D" uid="uid://bkomt8d57yqa4" path="res://assets/AxeWarriors/Blond/Run/Run7.png" id="9_frk7j"]
+[ext_resource type="Texture2D" uid="uid://3rcnkd45ranm" path="res://assets/AxeWarriors/Blond/Run/Run8.png" id="10_4l4bv"]
+[ext_resource type="Texture2D" uid="uid://dwhci7uwkdame" path="res://assets/AxeWarriors/Blond/Run/StartRun1.png" id="11_fs7m2"]
+[ext_resource type="Texture2D" uid="uid://cb2f4cbbubl1m" path="res://assets/AxeWarriors/Blond/Run/StopRun.png" id="12_6qv8s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fulsm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0cs06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d4yuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rnswr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frk7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4l4bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fs7m2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xqjur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bskwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_276gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0cs06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d4yuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rnswr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_frk7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4l4bv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_fs7m2")
+}],
+"loop": false,
+"name": &"startrun",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6qv8s")
+}],
+"loop": false,
+"name": &"stoprun",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 71.007
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mkv3"]
+radius = 11.0
+height = 122.0
+
+[node name="commander" type="CharacterBody2D" groups=["interactable"]]
+script = ExtResource("1_0cs06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.67572e-06, -6)
+scale = Vector2(1.98261, 1.83333)
+sprite_frames = SubResource("SpriteFrames_fulsm")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7344
+
+[node name="InteractionArea" type="Area2D" parent="." groups=["interactable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-2, 15)
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CapsuleShape2D_0mkv3")
+
+[node name="WarcrySound" type="AudioStreamPlayer" parent="."]

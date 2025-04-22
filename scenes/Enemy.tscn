@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn50tnj87u6xd"]
+
+[ext_resource type="Script" uid="uid://cto5l87op0ffd" path="res://scripts/Enemy.gd" id="1_55jtl"]
+[ext_resource type="Texture2D" uid="uid://blephacd4h5l6" path="res://assets/enemy-removebg-preview.png" id="2_55jtl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft8do"]
+radius = 15.5077
+height = 31.0155
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
+radius = 15.0273
+height = 30.0547
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpr68"]
+radius = 14.9889
+height = 29.9779
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+rotation = -4.75079
+scale = Vector2(2, 2)
+script = ExtResource("1_55jtl")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CapsuleShape2D_ft8do")
+
+[node name="DamageTimer" type="Timer" parent="AttackArea"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.84217e-14, -1.13687e-13)
+rotation = -1.53271
+scale = Vector2(0.0902664, 0.0862582)
+texture = ExtResource("2_55jtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_55jtl")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_mpr68")
+debug_color = Color(0.765759, 0.189597, 0.981249, 0.42)
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

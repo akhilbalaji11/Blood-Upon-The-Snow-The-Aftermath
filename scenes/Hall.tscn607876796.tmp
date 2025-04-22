@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1vi2otq2mqg8"]
+
+[ext_resource type="Script" uid="uid://cf85qyt7paljn" path="res://scripts/hall.gd" id="1_utfsg"]
+[ext_resource type="PackedScene" uid="uid://dpt2kpq45pgqg" path="res://scenes/ArcheryMinigame.tscn" id="2_8jaf3"]
+[ext_resource type="Texture2D" uid="uid://duyg15f0a1dsb" path="res://assets/hallinterior.png" id="2_bals2"]
+[ext_resource type="PackedScene" uid="uid://d1moujhw0pdof" path="res://scenes/player.tscn" id="3_8jaf3"]
+[ext_resource type="PackedScene" uid="uid://cxvnwwtj0bvl5" path="res://scenes/commander.tscn" id="4_1a26t"]
+[ext_resource type="PackedScene" uid="uid://52g4spg7tpww" path="res://scenes/DialogueUI.tscn" id="6_1a26t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeex6"]
+size = Vector2(1918, 642)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgyu"]
+size = Vector2(1917, 306)
+
+[node name="Hall" type="Node2D"]
+script = ExtResource("1_utfsg")
+archery_minigame_scene = ExtResource("2_8jaf3")
+
+[node name="Hallinterior" type="Sprite2D" parent="."]
+position = Vector2(960, 552)
+scale = Vector2(1.6, 1.59524)
+texture = ExtResource("2_bals2")
+
+[node name="Player" parent="." instance=ExtResource("3_8jaf3")]
+position = Vector2(96, 728)
+scale = Vector2(1.61785, 1.62244)
+
+[node name="Commander" parent="." instance=ExtResource("4_1a26t")]
+position = Vector2(1056, 712)
+scale = Vector2(-1.03542, 1.13588)
+dialogue_data = Array[Dictionary]([{
+"line": "Thorgestr! The Old Man said you'd report. Step forward.",
+"speaker": "Commander"
+}, {
+"line": "Commander Bjorn. Ready for duty.",
+"speaker": "Player"
+}, {
+"line": "Duty well served in that western raid. Saw you hold the line - you fight with the heart of a true Viking!",
+"speaker": "Commander"
+}, {
+"line": "Thank you, Commander. We showed them Reykjanesta's strength.",
+"speaker": "Player"
+}, {
+"line": "Aye. But strength must be honed. Victory yesterday means nothing tomorrow if our skills dull. Threats linger, always.",
+"speaker": "Commander"
+}, {
+"line": "We prepare! We endure! We prove our might!",
+"speaker": "Commander"
+}, {
+"line": "NOW! TO ARMS! FOR REYKJANESTA!",
+"speaker": "Commander"
+}])
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(960, 321)
+shape = SubResource("RectangleShape2D_jeex6")
+
+[node name="Area2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(959.5, 977)
+shape = SubResource("RectangleShape2D_3bgyu")
+
+[node name="DialogueUI" parent="." instance=ExtResource("6_1a26t")]

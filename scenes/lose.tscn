@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2fhi50b4de24"]
+
+[ext_resource type="Script" uid="uid://vlrap7klnray" path="res://scripts/LoseScreen.gd" id="1_vjdtf"]
+[ext_resource type="Texture2D" uid="uid://bwplyxll8xpho" path="res://assets/emptyWorld.png" id="2_10rtl"]
+[ext_resource type="FontFile" uid="uid://cx58al6qqjsb8" path="res://Viking.ttf" id="3_h0cgr"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vjdtf")
+
+[node name="EmptyWorld" type="Sprite2D" parent="."]
+position = Vector2(958, 538.5)
+scale = Vector2(0.787505, 0.788433)
+texture = ExtResource("2_10rtl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 486.0
+offset_right = 1198.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h0cgr")
+theme_override_font_sizes/font_size = 35
+text = "Retry Level"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 401.0
+offset_right = 1186.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(1, 0, 0.0166664, 1)
+theme_override_fonts/font = ExtResource("3_h0cgr")
+theme_override_font_sizes/font_size = 60
+text = "YOU DIED"

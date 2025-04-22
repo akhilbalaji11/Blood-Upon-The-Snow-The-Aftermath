@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://coh3nvapmygbn"]
+
+[ext_resource type="Script" uid="uid://c6bjubv46snkj" path="res://scripts/options_menu.gd" id="1_sjft1"]
+[ext_resource type="FontFile" uid="uid://bldy8svbs44hr" path="res://jorvik.TTF" id="2_syiqc"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sjft1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -452.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_syiqc")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="Vol_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_syiqc")
+theme_override_font_sizes/font_size = 40
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Mute_Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_syiqc")
+theme_override_font_sizes/font_size = 40
+text = "Mute"
+
+[node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_syiqc")
+theme_override_font_sizes/font_size = 6
+
+[node name="Resolution" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_syiqc")
+theme_override_font_sizes/font_size = 40
+text = "Resolution"
+
+[node name="Resolutions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_syiqc")
+theme_override_font_sizes/font_size = 40
+selected = 0
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]

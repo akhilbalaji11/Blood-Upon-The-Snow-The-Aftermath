@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://lyf580n5helb"]
+
+[ext_resource type="Script" uid="uid://ddivdhiy3f8aq" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="FontFile" uid="uid://bldy8svbs44hr" path="res://jorvik.TTF" id="2_jc7b1"]
+[ext_resource type="FontFile" uid="uid://cx58al6qqjsb8" path="res://Viking.ttf" id="3_hbdmr"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_con2f")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 856.0
+offset_top = -560.0
+offset_right = 1056.0
+offset_bottom = -441.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.365897, 0.562772, 1, 1)
+theme_override_fonts/font = ExtResource("2_jc7b1")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_jc7b1")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Play")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.364706, 0.564706, 1, 1)
+theme_override_fonts/font = ExtResource("2_jc7b1")
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+offset_left = 570.0
+offset_top = 43.0
+offset_right = 1399.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hbdmr")
+theme_override_font_sizes/font_size = 50
+text = "Blood Upon the Snow
+"
+
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 2
+offset_left = 772.0
+offset_top = 118.0
+offset_right = 1182.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hbdmr")
+theme_override_font_sizes/font_size = 30
+text = "The Aftermath"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

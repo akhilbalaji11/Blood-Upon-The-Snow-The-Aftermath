@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpw4oqprchwv7"]
+
+[ext_resource type="Script" uid="uid://clxac462lsdrn" path="res://scripts/Arrow.gd" id="1_3pw4r"]
+[ext_resource type="Texture2D" uid="uid://c58xcu3j1ruw0" path="res://assets/VikingArrow-removebg-preview.png" id="2_3pw4r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pw4r"]
+size = Vector2(56, 6)
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_3pw4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.410995, 1.49115)
+rotation = -0.000620287
+scale = Vector2(0.0985838, 0.100778)
+texture = ExtResource("2_3pw4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3pw4r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
