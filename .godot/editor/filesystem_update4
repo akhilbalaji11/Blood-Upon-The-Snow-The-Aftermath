@@ -15,3 +15,4 @@ res://scenes/world.tscn
 res://scenes/ArcheryMinigame.tscn
 res://scripts/menu.gd
 res://scripts/WinScreen.gd
+res://scripts/HutEntranceInteractable.gd

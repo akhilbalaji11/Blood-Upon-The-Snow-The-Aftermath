@@ -8,7 +8,7 @@ func interact(player_node):
 
 	# --- TODO LATER ---
 	# Add logic here to change scene, e.g.:
-	get_tree().change_scene_to_file("res://scenes/hall.tscn")
+	get_tree().change_scene_to_file("res://scenes/Hall.tscn")
 	# Maybe play a door opening sound
 	# Maybe fade out/in
 	# -----------------
