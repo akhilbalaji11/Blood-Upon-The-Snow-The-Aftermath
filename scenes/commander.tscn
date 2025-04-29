@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxvnwwtj0bvl5"]
+[gd_scene load_steps=22 format=3 uid="uid://cxvnwwtj0bvl5"]
 
 [ext_resource type="Script" uid="uid://bs228ao1xw0mm" path="res://scripts/commander.gd" id="1_0cs06"]
 [ext_resource type="Texture2D" uid="uid://dxsav61j83yqp" path="res://assets/AxeWarriors/Orange/Idle/Idle1.png" id="2_0cs06"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://3rcnkd45ranm" path="res://assets/AxeWarriors/Blond/Run/Run8.png" id="10_4l4bv"]
 [ext_resource type="Texture2D" uid="uid://dwhci7uwkdame" path="res://assets/AxeWarriors/Blond/Run/StartRun1.png" id="11_fs7m2"]
 [ext_resource type="Texture2D" uid="uid://cb2f4cbbubl1m" path="res://assets/AxeWarriors/Blond/Run/StopRun.png" id="12_6qv8s"]
+[ext_resource type="AudioStream" uid="uid://xg47vecvpu3q" path="res://assets/sounds/battle_horn_1-6931.wav" id="18_d4yuh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fulsm"]
 animations = [{
@@ -123,3 +124,4 @@ position = Vector2(0, 13)
 shape = SubResource("CapsuleShape2D_0mkv3")
 
 [node name="WarcrySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_d4yuh")

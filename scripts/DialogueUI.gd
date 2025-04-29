@@ -1,39 +1,33 @@
 extends Control
 
 signal dialogue_finished
-signal line_will_display(line_index: int, speaker: String) # <<< NEW SIGNAL
+signal line_will_display(line_index: int, speaker: String) # Signal declared
 
 # --- Nodes ---
-@onready var dialogue_box: NinePatchRect = %DialogueBox # Or NinePatchRect
+@onready var dialogue_box: NinePatchRect = %DialogueBox # Or Panel/NinePatchRect
 @onready var dialogue_label: Label = %DialogueLabel
-@onready var portrait_rect: TextureRect = %PortraitRect # Added PortraitRect
-@onready var typewriter_timer: Timer = $TypewriterTimer # Added Timer
-@onready var interaction_prompt_label: Label = %InteractionPromptLabel # Added prompt label
-@onready var success_sound: AudioStreamPlayer = $SuccessSound
-@onready var sweet_spot_sound: AudioStreamPlayer = $SweetSpotSound # Added previously
-# etc.
+@onready var portrait_rect: TextureRect = %PortraitRect
+@onready var typewriter_timer: Timer = $TypewriterTimer
+@onready var interaction_prompt_label: Label = %InteractionPromptLabel
+# Ensure these sound nodes exist and are referenced if used by this UI
+# @onready var success_sound: AudioStreamPlayer = $SuccessSound
+# @onready var sweet_spot_sound: AudioStreamPlayer = $SweetSpotSound
 
 # --- Exported Variables ---
-# Assign these textures in the Godot Editor for the DialogueUI instance in world.tscn
 @export var player_portrait: Texture2D
 @export var father_portrait: Texture2D
-@export var commander_portrait: Texture2D # <<< ADD THIS VARIABLE
-@export var balgruuf_portrait: Texture2D # <<< ADD THIS
+@export var commander_portrait: Texture2D
+@export var balgruuf_portrait: Texture2D
 
-
-# You might want a dictionary if you have many speakers:
-#@export var speaker_portraits: Dictionary = {"Player": null, "Father": null}
-
-@export var character_interval: float = 0.04 # Time between letters (adjust for speed)
+@export var character_interval: float = 0.04
 
 # --- Dialogue Data & State ---
-var dialogue_queue: Array[Dictionary] = [] # Holds the incoming dialogue data
-var current_line_data: Dictionary = {} # Holds speaker & line currently processing
-var full_line_text: String = ""        # The complete text for the current line
-var displayed_text_index: int = 0      # How many characters are currently shown
-var is_typing: bool = false            # Is the typewriter effect active?
-var current_line_index: int = -1 # <<< Ensure this is declared here
-
+var dialogue_queue: Array[Dictionary] = []
+var current_line_data: Dictionary = {}
+var full_line_text: String = ""
+var displayed_text_index: int = 0
+var is_typing: bool = false
+var current_line_index: int = -1 # <<< Declared class member
 
 func _ready():
 	dialogue_box.visible = false
@@ -41,7 +35,9 @@ func _ready():
 	interaction_prompt_label.visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	typewriter_timer.wait_time = character_interval
-	typewriter_timer.timeout.connect(_on_typewriter_timer_timeout)
+	# Check connection before connecting
+	if not typewriter_timer.timeout.is_connected(_on_typewriter_timer_timeout):
+		typewriter_timer.timeout.connect(_on_typewriter_timer_timeout)
 
 	if not InputMap.has_action("ui_accept"):
 		push_warning("Input action 'ui_accept' not found! Dialogue advancement might not work.")
@@ -58,9 +54,9 @@ func _unhandled_input(event: InputEvent):
 			dialogue_label.text = full_line_text
 			displayed_text_index = full_line_text.length()
 			is_typing = false
-			# Ensure sounds stop if skipping
-			if success_sound and success_sound.playing: success_sound.stop()
-			if sweet_spot_sound and sweet_spot_sound.playing: sweet_spot_sound.stop()
+			# Ensure sounds stop if skipping (add references if needed)
+			# if success_sound and success_sound.playing: success_sound.stop()
+			# if sweet_spot_sound and sweet_spot_sound.playing: sweet_spot_sound.stop()
 		else:
 			_advance_dialogue()
 
@@ -152,19 +148,20 @@ func _end_dialogue():
 	is_typing = false
 	current_line_index = -1 # Reset index when dialogue truly ends
 	if typewriter_timer.time_left > 0: typewriter_timer.stop()
-	if success_sound and success_sound.playing: success_sound.stop() # Ensure sounds stopped
-	if sweet_spot_sound and sweet_spot_sound.playing: sweet_spot_sound.stop()
+	# Stop any dialogue related sounds if applicable
+	# if success_sound and success_sound.playing: success_sound.stop()
+	# if sweet_spot_sound and sweet_spot_sound.playing: sweet_spot_sound.stop()
 	dialogue_finished.emit()
 
-# --- Prompt Functions (show/hide/handler) remain the same ---
+# --- Prompt Functions ---
 func show_interaction_prompt():
-	interaction_prompt_label.visible = true
+	if interaction_prompt_label: interaction_prompt_label.visible = true
 func hide_interaction_prompt():
-	interaction_prompt_label.visible = false
+	if interaction_prompt_label: interaction_prompt_label.visible = false
+
 func _on_player_can_interact_changed(can_interact: bool, target_name: String):
-	# --- ADDED check: Don't show prompt if dialogue is already visible ---
+	# Don't show prompt if dialogue is already visible
 	if can_interact and not dialogue_box.visible:
-	# -------------------------------------------------------------------
 		show_interaction_prompt()
 	else:
 		hide_interaction_prompt()

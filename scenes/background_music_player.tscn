@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b738hraecntu6"]
+
+[ext_resource type="Script" uid="uid://2r1fa48spnks" path="res://scripts/background_music_player.gd" id="1_1a057"]
+[ext_resource type="AudioStream" uid="uid://dgi4pur7o7yqg" path="res://assets/sounds/viking.mp3" id="1_sumlq"]
+
+[node name="BackgroundMusicPlayer" type="Node2D"]
+script = ExtResource("1_1a057")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_sumlq")
+volume_db = -0.2
+autoplay = true

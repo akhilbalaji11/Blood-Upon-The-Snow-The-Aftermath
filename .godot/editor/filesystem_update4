@@ -1,5 +1,8 @@
-res://scenes/win.tscn
-res://scenes/menu.tscn
+res://scenes/Hall.tscn
+res://scenes/commander.tscn
+res://scripts/commander.gd
+res://scripts/DialogueUI.gd
+res://scripts/hall.gd
 res://scenes/jail.tscn
 res://scenes/LockpickMinigame.tscn
 res://scenes/duelMain.tscn
@@ -8,11 +11,11 @@ res://scenes/duelMain3.tscn
 res://scenes/victory.tscn
 res://scenes/Betrayal.tscn
 res://scenes/player.tscn
-res://scenes/commander.tscn
 res://scenes/GameOver.tscn
+res://scenes/win.tscn
+res://scenes/menu.tscn
 res://scenes/lose.tscn
 res://scenes/world.tscn
 res://scenes/ArcheryMinigame.tscn
-res://scripts/menu.gd
-res://scripts/WinScreen.gd
-res://scripts/HutEntranceInteractable.gd
+res://scenes/background_music_player.tscn
+res://scripts/background_music_player.gd
