@@ -65,4 +65,4 @@ The game blends:
 
 ## Credits
 
-Built in Godot with custom game logic, dialogue scripting, and minigame flow created for **Blood Upon the Snow: The Aftermath**.
+Built in Godot with custom game logic, dialogue scripting, and minigame flow created for **Blood Upon the Snow: The Aftermath** with my Buddy Indra.
